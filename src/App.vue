@@ -1,35 +1,34 @@
-<template>
+<template><!-- 开启顶部安全区适配 -->
+  <van-nav-bar safe-area-inset-top/>
   <router-view class="h-screen bg-gray-50"></router-view>
-  <van-tabbar v-model="active">
-    <van-tabbar-item v-for="i in tabbarList" :name="i.path">{{ i.name }}
+  <van-tabbar v-model="active" placeholder route>
+    <van-tabbar-item v-for="i in tabbarList" :name="i.path" :to="i.path">{{ i.name }}
       <template #icon="props">
         <i :class="[i.class,{'text-4xl':props.active}]"></i>
       </template>
     </van-tabbar-item>
   </van-tabbar>
+  <!-- 开启底部安全区适配 -->
+  <van-number-keyboard safe-area-inset-bottom/>
 </template>
 <script setup>
 import { ref } from 'vue'
 
 const tabbarList = [{
   name: '首页',
-  path: 'index',
+  path: '/index',
   class: 'iconfont iconjiahao icon-paobu1 text-green-600'
 }, {
   name: '指定版',
-  path: 'gaoji',
+  path: '/vip',
   class: 'iconfont icon-paobu text-blue-600'
 }, {
-  name: '工具箱',
-  path: 'gongjuxiang',
-  class: 'iconfont icon-paobu3 text-red-600'
-}, {
   name: '客服',
-  path: 'kefu',
+  path: '/kefu',
   class: 'iconfont icon-kefudianhua text-gray-600'
 }, {
   name: '我的',
-  path: 'wode',
+  path: '/wode',
   class: 'iconfont icon-wode1 text-yellow-600'
 }]
 const active = ref('index')
