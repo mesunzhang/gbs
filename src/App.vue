@@ -28,7 +28,7 @@ const tabbarList = [{
   class: 'iconfont icon-kefudianhua text-gray-600'
 }, {
   name: '我的',
-  path: '/wode',
+  path: '/user',
   class: 'iconfont icon-wode1 text-yellow-600'
 }]
 const active = ref('index')
