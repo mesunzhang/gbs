@@ -5,11 +5,14 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   server: {
-    port: 5175
+    port: 5175,
+    proxy: {
+      '/api': 'https://www.518study.com/'
+    }
   },
   resolve: {
     alias: {
-      "@": '/src'
+      '@': '/src'
     }
   }
 })

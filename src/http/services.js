@@ -1,9 +1,19 @@
 import { GET } from './request'
 
 /**
- * 测试接口
+ *
  * @returns {Promise<any>}
  */
-export function test() {
-  return GET('https://jsonplaceholder.typicode.com/todos/1')
+export function commonStepListV3() {
+  return GET(
+    '/api/HomeController/commonStepListV3?changeType=0&_=1680314620694'
+  )
+}
+
+export function needReOauth() {
+  return GET('/api/HomeController/needReOauth')
+}
+
+export function getUserInfo() {
+  return GET('/api/HomeController/userInfoV2')
 }
