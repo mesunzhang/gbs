@@ -10,9 +10,9 @@
     <p class="my-8 text-blue-400">h5.518study.com/gbs/hi-97WnxzB8u27.html</p>
     <van-button
       id="url"
+      :data-clipboard-text="clipBoardText"
       block
       class="my-8"
-      data-clipboard-text="h5.518study.com/gbs/hi-97WnxzB8u27.html"
       plain
       size="small"
       square
@@ -31,7 +31,16 @@
 <script setup>
 import Clipboard from 'clipboard'
 import { showToast } from 'vant'
+import { useUserStore } from '../store/index.js'
+import { computed, ref } from 'vue'
 
+const store = useUserStore()
+const url = computed(() => {
+  return `h5.518study.com/gbs/hi-${store.userId}.html`
+})
+const clipBoardText = ref(
+  `${url.value} 最新版地址，微信内点击打开~如果将来打不开了，就去电脑或者手机任意浏览器中打开，可获取到最新地址~`
+)
 const copy = () => {
   let clipboard = new Clipboard('#url')
   clipboard.on('success', e => {

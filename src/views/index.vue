@@ -13,7 +13,7 @@
   </div>
 
   <div class="text-center text-sm">
-    <p>体验截止时间：{{ store.vipFreeEndDay }}</p>
+    <p class="mb-2">体验截止时间：{{ store.vipFreeEndDay }}</p>
     <van-button
       color="linear-gradient(to right, #ff6034, #ee0a24)"
       size="small"
