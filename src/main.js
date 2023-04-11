@@ -15,7 +15,8 @@ import {
   Field,
   NumberKeyboard,
   Icon,
-  Toast
+  Toast,
+  Dialog
 } from 'vant'
 import 'vant/lib/index.css'
 import { createPinia } from 'pinia'
@@ -37,4 +38,5 @@ app
   .use(NumberKeyboard)
   .use(Icon)
   .use(Toast)
+  .use(Dialog)
   .mount('#app')

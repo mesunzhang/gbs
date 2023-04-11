@@ -26,7 +26,7 @@
       >自定义区:可选择多个步数
     </van-tag>
     <van-grid :column-num="3" :gutter="10">
-      <van-grid-item v-for="i in bushuList" :key="i.step">
+      <van-grid-item v-for="i in bushuList" :key="i.step" @click="bushuClick">
         <template v-slot:default>
           <p class="text-base">{{ i.step }}步</p>
           <p class="text-xs text-red-600">{{ i.userName }}</p>
@@ -56,6 +56,7 @@
     </div>
     <van-button @click="router.push({ path: '/vip' })">指定步数</van-button>
   </div>
+  <pay-modal ref="payModal"></pay-modal>
 </template>
 
 <script setup>
@@ -63,8 +64,9 @@ import { onMounted, ref } from 'vue'
 import { commonStepListV3 } from '@/http/services'
 import { useRoute, useRouter } from 'vue-router'
 import { useUserStore } from '../store/index.js'
+import { getStepDetail, randomStepDetailUnSpec } from '../http/services.js'
+import PayModal from '@/components/PayModal.vue'
 
-const route = useRoute()
 const router = useRouter()
 const store = useUserStore()
 const bushuList = ref([])
@@ -105,6 +107,10 @@ const getList = async () => {
     return { ...i, userName }
   })
 }
+const bushuClick = step => {
+  payModal.value.init(step)
+}
+const payModal = ref(null)
 onMounted(() => {
   getList()
 })

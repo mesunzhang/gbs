@@ -6,29 +6,26 @@
       text="尊敬的基础版自定义用户：感谢支持~"
     />
     <van-divider />
-    <p class="text-base font-bold text-blue-400">
-      我的专属：丢给TA吧~
-      <van-button
-        id="url"
-        class="float-right ml-4 align-top"
-        data-clipboard-text="h5.518study.com/gbs/hi-97WnxzB8u27.html"
-        plain
-        size="mini"
-        type="danger"
-        @click="copy"
-      >
-        点击复制
-      </van-button>
-    </p>
-    <a
-      class="text-sm text-red-400"
-      href="h5.518study.com/gbs/hi-97WnxzB8u27.html"
-      >h5.518study.com/gbs/hi-97WnxzB8u27.html</a
+    <p class="my-8 text-gray-600">我的专属：丢给TA吧~</p>
+    <p class="my-8 text-blue-400">h5.518study.com/gbs/hi-97WnxzB8u27.html</p>
+    <van-button
+      id="url"
+      block
+      class="my-8"
+      data-clipboard-text="h5.518study.com/gbs/hi-97WnxzB8u27.html"
+      plain
+      size="small"
+      square
+      type="danger"
+      @click="copy"
     >
-
-    我的使用权限 功能模块 权限 有效期至 管理 体验 长期有效 🎁🎁🎁🎁 点击红色复制
-    （TA）可以体验： 可以体验 5 天 （我）可以增加体验： 可增加 1 天体验
-    用不用都行只要点开过
+      点击复制
+    </van-button>
+    <p class="my-4 font-bold text-gray-800">（TA）可以体验：</p>
+    <p class="my-6 pl-8">免费体验<span class="text-red-600"> 5 </span>天</p>
+    <p class="my-4 font-bold text-gray-800">（我）可以增加体验：</p>
+    <p class="my-6 pl-8">可增加<span class="text-red-600"> 1 </span>天体验</p>
+    <p class="my-6 pl-8">用不用都行只要点开过</p>
   </div>
 </template>
 <script setup>

@@ -17,3 +17,11 @@ export function needReOauth() {
 export function getUserInfo() {
   return GET('/api/HomeController/userInfoV2')
 }
+
+export function randomStepDetailUnSpec() {
+  return GET('/api/HomeController/randomStepDetailUnSpec')
+}
+
+export function getStepDetail() {
+  return GET('/api/HomeController/stepDetail')
+}
