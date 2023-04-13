@@ -27,7 +27,9 @@
         <van-button class="w-1/2" type="default" @click="noPay.showHandle()"
           >我不捐赠
         </van-button>
-        <van-button class="w-1/2" color="#FCD34D">捐赠 ¥1.5 (3天)</van-button>
+        <van-button class="w-1/2" color="#FCD34D" @click="pay(1.5)"
+          >捐赠 ¥1.5 (3天)
+        </van-button>
         <van-button class="w-1/2" color="#FBBF24">捐赠 ¥8.8 (3个月)</van-button>
         <van-button
           class="w-1/2"
@@ -54,7 +56,11 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { getStepDetail, randomStepDetailUnSpec } from '../http/services.js'
+import {
+  createOrderBase,
+  getStepDetail,
+  randomStepDetailUnSpec
+} from '../http/services.js'
 import { useUserStore } from '../store/index.js'
 
 const show = ref(false)
@@ -99,6 +105,9 @@ const noPay = reactive({
     router.push('/user')
   }
 })
+const pay = async num => {
+  // const res = await createOrderBase()
+}
 </script>
 <style lang="less" scoped>
 .block-btn {

@@ -25,3 +25,11 @@ export function randomStepDetailUnSpec() {
 export function getStepDetail() {
   return GET('/api/HomeController/stepDetail')
 }
+
+export function createOrderBase() {
+  return GET('/api/GbsPayController/createOrderBase?type=common_pay_type_1')
+}
+
+export function insertMsg(params) {
+  return GET('api/HomeController/insertMsg', params)
+}

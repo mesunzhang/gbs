@@ -5,7 +5,10 @@
       自定义步数，精准无错!<br />
       排名想在TA的后面?想霸占排行榜让别人看见?来吧!走起!
     </div>
-    <p class="mb-4 text-sm">体验到期时间: 2023-01-22</p>
+    <p v-if="store.usageType === 2" class="mb-2">
+      体验截止时间：{{ store.vipFreeEndDay }}
+    </p>
+    <p v-else class="mb-2">指定体验剩余次数：{{ store.gjTimes }}</p>
     <van-field
       v-model="myBushu"
       clickable
@@ -74,6 +77,9 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import PayModal from '@/components/PayModal.vue'
+import { useUserStore } from '../store/index.js'
+
+const store = useUserStore()
 
 const random = () => {
   return Math.floor(Math.random().toFixed(5) * 100000)

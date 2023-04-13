@@ -7,12 +7,16 @@ export const useUserStore = defineStore('user', {
   state: () => ({
     token: Cookies.get('myToken') || '',
     userId: Cookies.get('myUserId') || '',
-    vipFreeEndDay: ''
+    usageType: '',
+    vipFreeEndDay: '',
+    gjTimes: ''
   }),
   getters: {
     getToken: state => state.token,
     getUserId: state => state.userId,
-    getVipFreeEndDay: state => state.vipFreeEndDay
+    getUsageType: state => state.usageType,
+    getVipFreeEndDay: state => state.vipFreeEndDay,
+    getGjTimes: state => state.gjTimes
   },
   actions: {
     async initUserInfo() {
@@ -37,7 +41,9 @@ export const useUserStore = defineStore('user', {
           '&connect_redirect=1#wechat_redirect'
       }
       const res = await getUserInfo()
-      this.vipFreeEndDay = dayjs(res.vipFreeEndDay).format('YYYY-MM-DD')
+      this.usageType = res.data.usageType
+      this.vipFreeEndDay = dayjs(res.data.vipFreeEndDay).format('YYYY-MM-DD')
+      this.gjTimes = res.data.gjTimes
     }
   }
 })

@@ -49,7 +49,7 @@ const tabbarList = [
   },
   {
     name: '客服',
-    path: '/kefu',
+    path: '/help',
     class: 'iconfont icon-kefudianhua text-gray-600'
   },
   {
