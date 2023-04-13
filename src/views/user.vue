@@ -1,11 +1,10 @@
 <template>
+  <van-notice-bar
+    :scrollable="false"
+    class="custom-center"
+    text="尊敬的基础版自定义用户：感谢支持~"
+  />
   <div class="p-4">
-    <van-notice-bar
-      :scrollable="false"
-      class="custom-center"
-      text="尊敬的基础版自定义用户：感谢支持~"
-    />
-    <van-divider />
     <p class="my-8 text-gray-600">我的专属：丢给TA吧~</p>
     <p class="my-8 text-blue-400">h5.518study.com/gbs/hi-97WnxzB8u27.html</p>
     <van-button

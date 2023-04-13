@@ -4,7 +4,7 @@
     class="custom-center"
     text="有任何问题，可以留言联系客服~"
   />
-  <div class="p-8">
+  <div class="p-4">
     <van-field
       v-model="message"
       autosize
@@ -24,6 +24,9 @@ import { showNotify } from 'vant'
 
 const message = ref('')
 const submit = async () => {
+  if (!message.value) {
+    return
+  }
   await insertMsg({ msg: message.value })
   showNotify({ type: 'success', message: '感谢您的反馈' })
 }

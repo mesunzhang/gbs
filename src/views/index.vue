@@ -62,9 +62,8 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { commonStepListV3 } from '@/http/services'
-import { useRoute, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { useUserStore } from '../store/index.js'
-import { getStepDetail, randomStepDetailUnSpec } from '../http/services.js'
 import PayModal from '@/components/PayModal.vue'
 
 const router = useRouter()
